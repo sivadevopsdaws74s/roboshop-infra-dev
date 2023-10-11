@@ -5,6 +5,7 @@ module "vpn_instance" {
   vpc_security_group_ids = [data.aws_ssm_parameter.vpn_sg_id.value]
   #this is optional, if we dont give this will be provisioned inside default subnet of default vpc
   #subnet_id = local.public_subnet_ids[0] # public subnet of default VPC
+  user_data = file("openvpn.sh")
   tags = merge(
     {
         Name = "${var.project_name}-${var.env}-vpn"
