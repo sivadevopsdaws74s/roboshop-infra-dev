@@ -1,4 +1,5 @@
 #!/bin/bash
+# non-interactive or headless installation
 export AUTO_INSTALL=y
 export ENDPOINT=$(curl http://169.254.169.254/latest/meta-data/public-ipv4)
 export APPROVE_INSTALL=y
